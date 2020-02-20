@@ -1,7 +1,13 @@
 import styled from 'styled-components';
+import myImage from '../../assets/images/illustration.png';
 
 export const Container = styled.div`
   padding: 62px 174px 0 174px;
+  background-image: url(${myImage});
+  background-size: 779px;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  background-position: 90% bottom;
 
   .logo {
     margin-bottom: 96px;
