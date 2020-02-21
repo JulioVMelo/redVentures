@@ -13,7 +13,10 @@ export default function Pets() {
   const [pet, setPet] = useState('');
 
   function handleSubmit() {
-    history.push(`/sunlight/${sun}/water/${water}/pets/${pet}`);
+    if (!pet) {
+      return console.log('nao vai dar nao');
+    }
+    return history.push(`/sunlight/${sun}/water/${water}/pets/${pet}`);
   }
 
   function handlePrev() {

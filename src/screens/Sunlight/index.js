@@ -19,7 +19,10 @@ export default function Sunlight() {
   }, [sun]);
 
   function handleSubmit() {
-    history.push(`/sunlight/${sunLevel}/water`);
+    if (!sunLevel) {
+      return console.log('nao vai dar nao');
+    }
+    return history.push(`/sunlight/${sunLevel}/water`);
   }
 
   function handlePrev() {

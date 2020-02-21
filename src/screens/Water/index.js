@@ -20,7 +20,11 @@ export default function Water() {
   }, [water]);
 
   function handleSubmit() {
-    history.push(`/sunlight/${sun}/water/${waterLevel}/pets`);
+    if (!waterLevel) {
+      return console.log('nao vai dar nao');
+    }
+
+    return history.push(`/sunlight/${sun}/water/${waterLevel}/pets`);
   }
 
   function handlePrev() {
