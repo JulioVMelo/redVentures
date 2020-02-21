@@ -12,7 +12,7 @@ body {
   font-family: 'Montserrat', 'Helvetica neue', 'Lato', sans-serif;
 }
 
-button {
+.button {
   display: flex;
   align-items: center;
   font-size: 1.6rem;
@@ -21,7 +21,8 @@ button {
   cursor: pointer;
   border-radius: 25px;
   padding: 15px 25px;
-  
+  width: fit-content;
+
   > img {
     width: 20px;
     margin-right: 13px;
