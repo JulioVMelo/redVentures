@@ -72,7 +72,7 @@ export const Choice = styled.div`
 `;
 
 export const ListChoice = styled.section`
-  width: 715px;
+  width: 460px;
   max-width: 100%;
 
   .form {
