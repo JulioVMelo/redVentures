@@ -16,7 +16,7 @@ export default function Pets() {
     if (!pet) {
       return console.log('nao vai dar nao');
     }
-    return history.push(`/sunlight/${sun}/water/${water}/pets/${pet}`);
+    return history.push(`/sunlight/${sun}/water/${water}/pets/${pet}/store`);
   }
 
   function handlePrev() {
@@ -36,9 +36,9 @@ export default function Pets() {
       <Ui.ListChoice>
         <div className="form">
           <Choice
-            background={pet === 'yes'}
+            background={pet === 'true'}
             color="#FD9872"
-            value="yes"
+            value="true"
             label="yes"
             handleChange={e => setPet(e)}
           >
@@ -73,7 +73,7 @@ export default function Pets() {
             previous
           </button>
           <button type="button" className="-next" onClick={handleSubmit}>
-            <img src={Arrow} alt="next" />
+            <img src={Arrow} alt="finish" />
             next
           </button>
         </div>
