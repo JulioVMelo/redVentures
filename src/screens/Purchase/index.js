@@ -1,29 +1,16 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
-import * as yup from 'yup';
-import { Formik, Form, Field, ErrorMessage } from 'formik';
+import { useHistory, useParams, Switch, Route } from 'react-router-dom';
 import * as Ui from './styles';
 import api from '../../services/api';
 import Border from '../../components/Border';
 import Checkout from '../../components/Checkout';
-import Erro from '../../assets/images/icons/error.png';
-
-const schema = yup.object().shape({
-  name: yup.string().required('is required'),
-  email: yup
-    .string()
-    .email('Please provide a valid e-mail.')
-    .required('is required'),
-});
-
-const initialValues = {
-  name: '',
-  email: '',
-};
+import BoxInput from '../../components/BoxInput';
+import Email from '../../assets/images/icons/email.png';
 
 export default function Purchase() {
   const [plant, setPlant] = useState();
   const { id } = useParams();
+  const history = useHistory();
 
   useEffect(() => {
     async function handleFetchPlantDetail() {
@@ -34,7 +21,8 @@ export default function Purchase() {
   }, [id]);
 
   function handleSubmit(values) {
-    console.log(values);
+    values.id = id;
+    api.post('', values).then(history.push(`/purchase/${id}/success`));
   }
 
   return (
@@ -49,54 +37,18 @@ export default function Purchase() {
             toxic={plant.toxicity}
           />
         )}
-        <div className="boxInput">
-          <h1>Nice pick!</h1>
-          <p>
-            Tell us your name and e-mail and we will get in touch regarding your
-            order ;)
-          </p>
-          <Formik
-            initialValues={initialValues}
-            onSubmit={handleSubmit}
-            validationSchema={schema}
-          >
-            <Form encType="multipart/form-data">
-              <Ui.Field>
-                <label>Name</label>
-                <Field
-                  name="name"
-                  type="text"
-                  placeholder="Crazy Plant Person"
-                />
-                <ErrorMessage name="name">
-                  {msg => (
-                    <span className="errorMessage">
-                      <img src={Erro} alt="erro" />
-                      {msg}
-                    </span>
-                  )}
-                </ErrorMessage>
-              </Ui.Field>
-              <Ui.Field>
-                <label>Email</label>
-                <Field
-                  name="email"
-                  type="email"
-                  placeholder="plantperson@email.com"
-                />
-                <ErrorMessage name="email">
-                  {msg => (
-                    <span className="errorMessage">
-                      <img src={Erro} alt="erro" />
-                      {msg}
-                    </span>
-                  )}
-                </ErrorMessage>
-              </Ui.Field>
-            </Form>
-          </Formik>
-          <button type="submit">send</button>
-        </div>
+        <Switch>
+          <Route path="/purchase/:id" exact>
+            <BoxInput handleSubmit={values => handleSubmit(values)} />
+          </Route>
+          <Route path="/purchase/:id/success">
+            <Ui.Success>
+              <h1>Thank you!</h1>
+              <p>You will hear from us soon. Please check your e-mail!</p>
+              <img src={Email} alt="email send" />
+            </Ui.Success>
+          </Route>
+        </Switch>
       </section>
     </Ui.Container>
   );
