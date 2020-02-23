@@ -31,6 +31,17 @@ export const Container = styled.div`
     width: 100%;
     margin-top: 10px;
 
+    .properties {
+      display: flex;
+      align-items: center;
+      flex-grow: 1;
+      justify-content: flex-end;
+
+      img {
+        margin-right: 10px;
+      }
+    }
+
     span {
       font-size: 1.8rem;
       color: #6e6e6e;

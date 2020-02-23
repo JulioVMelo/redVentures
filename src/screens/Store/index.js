@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useHistory } from 'react-router-dom';
 import * as Ui from './styles';
 import Pick from '../../assets/images/pick.png';
 import Border from '../../components/Border';
@@ -10,6 +10,7 @@ import Product from '../../components/Product';
 export default function Store() {
   const [plants, setPlants] = useState([]);
   const { sun, water, pets } = useParams();
+  const history = useHistory();
 
   useEffect(() => {
     async function handleFetchPlants() {
@@ -19,6 +20,10 @@ export default function Store() {
     }
     handleFetchPlants();
   }, [pets, sun, water]);
+
+  function handlePlantDetail(id) {
+    history.push(`/purchase/${id}`);
+  }
 
   return (
     <Ui.Container>
@@ -31,10 +36,26 @@ export default function Store() {
       </Ui.Header>
       <Ui.ListProducts>
         {plants &&
-          plants.map(({ name, url, price, id }) => (
-            <Product id={id} name={name} image={url} price={price} />
-          ))}
-        {/* <Product /> */}
+          plants.map(
+            ({
+              name,
+              url,
+              price,
+              id,
+              sun: sunPlant,
+              water: waterPlant,
+              toxicity,
+            }) => (
+              <Product
+                id={id}
+                name={name}
+                image={url}
+                price={price}
+                handleDetail={() => handlePlantDetail(id)}
+                properties={{ sunPlant, waterPlant, toxicity }}
+              />
+            )
+          )}
       </Ui.ListProducts>
     </Ui.Container>
   );

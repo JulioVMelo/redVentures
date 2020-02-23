@@ -34,6 +34,17 @@ body {
   }
 
 }
+
+  .errorMessage {
+    color: #F71D1D;
+    font-size: 1.2rem;
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    img {
+      margin-right: 10px;
+    }
+  }
 `;
 
 export default GlobalStyle;

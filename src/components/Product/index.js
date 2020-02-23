@@ -1,7 +1,20 @@
 import React from 'react';
 import * as Ui from './styles';
+import HighSun from '../../assets/images/icons/highSun.png';
+import FalseIcon from '../../assets/images/icons/false.png';
+import LowSun from '../../assets/images/icons/lowSun.png';
+import HighWater from '../../assets/images/icons/highWater.png';
+import LowWater from '../../assets/images/icons/lowWater.png';
+import Toxic from '../../assets/images/icons/toxic.png';
 
-export default function Product({ image, name, price, id }) {
+export default function Product({
+  image,
+  name,
+  price,
+  id,
+  handleDetail,
+  properties,
+}) {
   return (
     <Ui.Container>
       <div className="image">
@@ -11,10 +24,27 @@ export default function Product({ image, name, price, id }) {
       <div className="info">
         <span>$ {price}</span>
         <div className="properties">
-          <span />
+          {properties.toxicity && <img src={Toxic} alt="toxic" />}
+
+          {properties.sunPlant === 'high' && (
+            <img src={HighSun} alt="high sun" />
+          )}
+          {properties.sunPlant === 'low' && <img src={LowSun} alt="low sun" />}
+
+          {properties.waterPlant === 'rarely' && (
+            <img src={FalseIcon} alt="no water" />
+          )}
+          {properties.waterPlant === 'daily' && (
+            <img src={HighWater} alt="daily water" />
+          )}
+          {properties.waterPlant === 'regularly' && (
+            <img src={LowWater} alt="daily water" />
+          )}
         </div>
       </div>
-      <button type="button">buy now</button>
+      <button type="button" onClick={() => handleDetail(id)}>
+        buy now
+      </button>
     </Ui.Container>
   );
 }

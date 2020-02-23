@@ -5,6 +5,7 @@ import Sunlight from './screens/Sunlight';
 import Water from './screens/Water';
 import Pets from './screens/Pets';
 import Store from './screens/Store';
+import Purchase from './screens/Purchase';
 
 export default function Routes() {
   return (
@@ -17,6 +18,7 @@ export default function Routes() {
         path="/sunlight/:sun/water/:water?/pets/:pets?/store"
         component={Store}
       />
+      <Route path="/purchase/:id" component={Purchase} />
     </Switch>
   );
 }

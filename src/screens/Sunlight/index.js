@@ -80,11 +80,11 @@ export default function Sunlight() {
             </svg>
           </Choice>
           <Choice
-            background={sunLevel === 'no'}
+            background={sunLevel === 'false'}
             color="#f5b08c"
             label="No sunlight"
             handleChange={e => setSunLevel(e)}
-            value="no"
+            value="false"
           >
             <svg
               width="57"

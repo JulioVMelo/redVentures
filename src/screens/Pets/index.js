@@ -51,9 +51,9 @@ export default function Pets() {
             </svg>
           </Choice>
           <Choice
-            background={pet === 'no'}
+            background={pet === 'false'}
             color="#FD9872"
-            value="no"
+            value="false"
             label="no/they don't care"
             handleChange={e => setPet(e)}
           >
