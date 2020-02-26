@@ -6,6 +6,7 @@ import Border from '../../components/Border';
 import Checkout from '../../components/Checkout';
 import BoxInput from '../../components/BoxInput';
 import Email from '../../assets/images/icons/email.png';
+import Logo from '../../components/Logo';
 
 export default function Purchase() {
   const [plant, setPlant] = useState();
@@ -30,6 +31,7 @@ export default function Purchase() {
 
   return (
     <Ui.Container>
+      <Logo />
       <Border />
       <section className="cart">
         {plant && (

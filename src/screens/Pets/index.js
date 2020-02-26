@@ -6,6 +6,7 @@ import Step from '../../components/Step';
 import Arrow from '../../assets/images/arrow-green.png';
 import Dog from '../../assets/images/dog.png';
 import Border from '../../components/Border';
+import Logo from '../../components/Logo';
 
 export default function Pets() {
   const history = useHistory();
@@ -25,6 +26,7 @@ export default function Pets() {
 
   return (
     <Ui.Container>
+      <Logo />
       <Border />
       <Step
         image={Dog}

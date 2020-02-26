@@ -5,6 +5,7 @@ import Pick from '../../assets/images/pick.png';
 import Border from '../../components/Border';
 import api from '../../services/api';
 import Product from '../../components/Product';
+import Logo from '../../components/Logo';
 
 export default function Store() {
   const [plants, setPlants] = useState([]);
@@ -29,6 +30,7 @@ export default function Store() {
 
   return (
     <Ui.Container>
+      <Logo />
       <Border />
       <Ui.Header>
         <div className="image">

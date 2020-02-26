@@ -6,6 +6,7 @@ import Border from '../../components/Border';
 import Sun from '../../assets/images/sun.png';
 import Arrow from '../../assets/images/arrow-green.png';
 import Choice from '../../components/Choice';
+import Logo from '../../components/Logo';
 
 export default function Sunlight() {
   const [sunLevel, setSunLevel] = useState('');
@@ -31,6 +32,7 @@ export default function Sunlight() {
 
   return (
     <Ui.Container>
+      <Logo />
       <Border />
       <Step image={Sun}>
         First, set the amount of <br />

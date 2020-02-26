@@ -1,12 +1,11 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  width: 26px;
-  height: 677px;
-  position: absolute;
-  left: 81px;
+  width: 166px;
+  margin-bottom: 25px;
+  display: none;
 
   @media (max-width: 930px) {
-    display: none;
+    display: block;
   }
 `;

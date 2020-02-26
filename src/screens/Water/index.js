@@ -7,6 +7,7 @@ import Border from '../../components/Border';
 import Arrow from '../../assets/images/arrow-green.png';
 import Wateringcan from '../../assets/images/wateringcan.png';
 import Choice from '../../components/Choice';
+import Logo from '../../components/Logo';
 
 export default function Water() {
   const [waterLevel, setWaterLevel] = useState('');
@@ -33,6 +34,7 @@ export default function Water() {
 
   return (
     <Ui.Container>
+      <Logo />
       <Border />
       <Step image={Wateringcan}>
         How often do you want to <br />

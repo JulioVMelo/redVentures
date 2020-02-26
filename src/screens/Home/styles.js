@@ -25,4 +25,30 @@ export const Container = styled.div`
       margin-bottom: 30px;
     }
   }
+
+  @media (max-width: 930px) {
+    padding: 10px;
+    background-position: bottom;
+    background-size: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .logo {
+      margin-bottom: 45px;
+    }
+
+    .call {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      text-align: center;
+
+      h1 {
+        font-size: 3.5rem;
+        line-height: initial;
+      }
+    }
+  }
 `;
