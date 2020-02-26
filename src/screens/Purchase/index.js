@@ -40,6 +40,7 @@ export default function Purchase() {
             sun={plant.sun}
             water={plant.water}
             toxic={plant.toxicity}
+            className="checkout"
           />
         )}
         <Switch>

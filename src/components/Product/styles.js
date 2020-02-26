@@ -10,6 +10,12 @@ export const Container = styled.div`
   width: 268px;
   margin-bottom: 53px;
 
+  @media (max-width: 1002px) {
+    margin-right: 20px;
+    overflow-x: scroll;
+    min-width: 268px;
+  }
+
   .image {
     margin-bottom: 12px;
   }

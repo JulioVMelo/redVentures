@@ -50,7 +50,7 @@ export default function Water() {
             label="rarely"
             handleChange={e => setWaterLevel(e)}
           >
-            <svg viewBox="0 0 57 70" xmlns="http://www.w3.org/2000/svg">
+            <svg viewBox="0 0 94 73" xmlns="http://www.w3.org/2000/svg">
               <path
                 fillRule="evenodd"
                 clipRule="evenodd"

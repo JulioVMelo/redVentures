@@ -9,6 +9,10 @@ export const Container = styled.div`
   padding: 61px;
   min-height: 100vh;
   position: relative;
+
+  @media (max-width: 570px) {
+    padding: 10px;
+  }
 `;
 
 export const ListChoice = styled.section`

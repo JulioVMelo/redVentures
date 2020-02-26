@@ -1,11 +1,22 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
+  margin-right: 50px;
+  margin-bottom: 30px;
+
   h1 {
     font-size: 5rem;
     color: #0c261c;
     line-height: 55px;
     margin-bottom: 10px;
+  }
+
+  @media (max-width: 922px) {
+    margin: 0;
+    padding: 10px;
+    h1 {
+      font-size: 3.5rem;
+    }
   }
 
   span {

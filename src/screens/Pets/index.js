@@ -59,7 +59,7 @@ export default function Pets() {
             label="no/they don't care"
             handleChange={e => setPet(e)}
           >
-            <svg xmlns="http://www.w3.org/2000/svg">
+            <svg viewBox="0 0 94 70" xmlns="http://www.w3.org/2000/svg">
               <path
                 fillRule="evenodd"
                 clipRule="evenodd"

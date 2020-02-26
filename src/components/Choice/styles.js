@@ -10,6 +10,12 @@ export const Container = styled.div`
   min-width: 215px;
   transition: all 0.4s linear;
 
+  @media (max-width: 570px) {
+    width: 100%;
+    min-width: 100%;
+    height: 74px;
+  }
+
   &:hover {
     background-color: ${props => props.color};
 
@@ -56,6 +62,22 @@ export const Container = styled.div`
       font-weight: ${props => (props.background ? 600 : 300)};
       margin-top: 22px;
       text-transform: capitalize;
+    }
+
+    @media (max-width: 570px) {
+      flex-direction: row;
+      justify-content: flex-start;
+      padding: 20px;
+      align-items: center;
+
+      svg {
+        margin-right: 30px;
+        width: 42px;
+      }
+
+      span {
+        margin-top: 0;
+      }
     }
   }
 `;

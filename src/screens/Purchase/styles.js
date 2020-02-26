@@ -3,19 +3,29 @@ import styled from 'styled-components';
 export const Container = styled.div`
   display: flex;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: space-between;
   flex-direction: column;
   background-color: #fff;
   padding: 61px;
   min-height: 100vh;
   position: relative;
 
+  @media (max-width: 922px) {
+    padding: 10px 0;
+  }
+
   .cart {
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
-    width: 902px;
+    max-width: 902px;
     flex-wrap: wrap;
+
+    @media (max-width: 922px) {
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
   }
 `;
 

@@ -6,7 +6,7 @@ export const Container = styled.div`
   position: absolute;
   left: 81px;
 
-  @media (max-width: 930px) {
+  @media (max-width: 1116px) {
     display: none;
   }
 `;

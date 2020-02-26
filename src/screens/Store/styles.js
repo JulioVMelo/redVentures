@@ -9,12 +9,12 @@ export const Container = styled.div`
   padding: 61px;
   min-height: 100vh;
   position: relative;
-`;
+  width: 100%;
 
-// export const ListChoice = styled.section`
-//   width: 715px;
-//   max-width: 100%;
-// `;
+  @media (max-width: 1002px) {
+    padding: 10px;
+  }
+`;
 
 export const Header = styled.header`
   display: flex;
@@ -30,6 +30,10 @@ export const Header = styled.header`
     font-size: 6.5rem;
     font-weight: 600;
     margin: 48px 0 78px 0;
+
+    @media (max-width: 1002px) {
+      font-size: 4rem;
+    }
   }
 `;
 
@@ -39,4 +43,10 @@ export const ListProducts = styled.section`
   justify-content: space-between;
   width: 864px;
   flex-wrap: wrap;
+
+  @media (max-width: 1002px) {
+    flex-wrap: nowrap;
+    width: inherit;
+    overflow-x: scroll;
+  }
 `;
