@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { memo } from 'react';
+import PropTypes from 'prop-types';
 import * as Ui from './styles';
 import HighSun from '../../assets/images/icons/highSun.png';
 import HighWater from '../../assets/images/icons/highWater.png';
@@ -8,7 +9,7 @@ import LowWater from '../../assets/images/icons/lowWater.png';
 import Toxic from '../../assets/images/icons/toxic.png';
 import Dog from '../../assets/images/icons/Dog.png';
 
-export default function Checkout({ image, water, sun, toxic }) {
+function Checkout({ image, water, sun, toxic }) {
   return (
     <Ui.Container>
       <h1>Succulent bowl</h1>
@@ -47,3 +48,19 @@ export default function Checkout({ image, water, sun, toxic }) {
     </Ui.Container>
   );
 }
+
+export default memo(Checkout);
+
+Checkout.propTypes = {
+  image: PropTypes.string,
+  water: PropTypes.string,
+  sun: PropTypes.string,
+  toxic: PropTypes.string,
+};
+
+Checkout.defaultProps = {
+  image: '',
+  water: '',
+  sun: '',
+  toxic: '',
+};

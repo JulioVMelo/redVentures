@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { memo } from 'react';
+import PropTypes from 'prop-types';
 import * as Ui from './styles';
 
-export default function Step({ image, children, subTitle }) {
+function Step({ image, children, subTitle }) {
   return (
     <Ui.Container>
       <div className="image">
@@ -12,3 +13,15 @@ export default function Step({ image, children, subTitle }) {
     </Ui.Container>
   );
 }
+
+export default memo(Step);
+
+Step.propTypes = {
+  image: PropTypes.string,
+  subTitle: PropTypes.string,
+};
+
+Step.defaultProps = {
+  image: '',
+  subTitle: '',
+};

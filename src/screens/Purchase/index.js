@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useCallback } from 'react';
 import { useHistory, useParams, Switch, Route } from 'react-router-dom';
 import * as Ui from './styles';
 import api from '../../services/api';
@@ -20,10 +20,13 @@ export default function Purchase() {
     handleFetchPlantDetail();
   }, [id]);
 
-  function handleSubmit(values) {
-    values.id = id;
-    api.post('', values).then(history.push(`/purchase/${id}/success`));
-  }
+  const handleSubmit = useCallback(
+    values => {
+      values.id = id;
+      api.post('', values).then(history.push(`/purchase/${id}/success`));
+    },
+    [history, id]
+  );
 
   return (
     <Ui.Container>

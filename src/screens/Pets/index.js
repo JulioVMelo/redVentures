@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useCallback } from 'react';
 import { useHistory, useParams } from 'react-router-dom';
 import * as Ui from './styles';
 import Choice from '../../components/Choice';
@@ -12,16 +12,16 @@ export default function Pets() {
   const { sun, water } = useParams();
   const [pet, setPet] = useState('');
 
-  function handleSubmit() {
+  const handleSubmit = useCallback(() => {
     if (!pet) {
       return console.log('nao vai dar nao');
     }
     return history.push(`/sunlight/${sun}/water/${water}/pets/${pet}/store`);
-  }
+  }, [history, pet, sun, water]);
 
-  function handlePrev() {
+  const handlePrev = useCallback(() => {
     history.push(`/sunlight/${sun}/water/${water}`);
-  }
+  }, [history, sun, water]);
 
   return (
     <Ui.Container>

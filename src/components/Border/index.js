@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 import LogoBorder from '../../assets/images/logo-with-line.png';
 import * as Ui from './styles';
 
@@ -8,4 +8,4 @@ const Border = () => (
   </Ui.Container>
 );
 
-export default Border;
+export default memo(Border);

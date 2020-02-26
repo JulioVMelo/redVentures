@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { useHistory, useParams } from 'react-router-dom';
 import * as Ui from './styles';
 import Step from '../../components/Step';
@@ -18,16 +18,16 @@ export default function Sunlight() {
     }
   }, [sun]);
 
-  function handleSubmit() {
+  const handleSubmit = useCallback(() => {
     if (!sunLevel) {
       return console.log('nao vai dar nao');
     }
     return history.push(`/sunlight/${sunLevel}/water`);
-  }
+  }, [history, sunLevel]);
 
-  function handlePrev() {
+  const handlePrev = useCallback(() => {
     history.push('/');
-  }
+  }, [history]);
 
   return (
     <Ui.Container>

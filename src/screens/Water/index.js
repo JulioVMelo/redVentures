@@ -1,5 +1,5 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { useHistory, useParams } from 'react-router-dom';
 import * as Ui from './styles';
 import Step from '../../components/Step';
@@ -19,17 +19,17 @@ export default function Water() {
     }
   }, [water]);
 
-  function handleSubmit() {
+  const handleSubmit = useCallback(() => {
     if (!waterLevel) {
       return console.log('nao vai dar nao');
     }
 
     return history.push(`/sunlight/${sun}/water/${waterLevel}/pets`);
-  }
+  }, [water, history, waterLevel, sun]);
 
-  function handlePrev() {
+  const handlePrev = useCallback(() => {
     history.push(`/sunlight/${sun}`);
-  }
+  }, [history, sun, water]);
 
   return (
     <Ui.Container>

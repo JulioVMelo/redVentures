@@ -1,6 +1,7 @@
 import React from 'react';
 import * as yup from 'yup';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
+import PropTypes from 'prop-types';
 import * as Ui from './styles';
 
 import Erro from '../../assets/images/icons/error.png';
@@ -70,3 +71,11 @@ export default function BoxInput({ handleSubmit }) {
     </Ui.Container>
   );
 }
+
+BoxInput.propTypes = {
+  handleSubmit: PropTypes.func,
+};
+
+BoxInput.defaultProps = {
+  handleSubmit: () => {},
+};

@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import * as Ui from './styles';
 
 export default function Choice({
@@ -25,3 +26,19 @@ export default function Choice({
     </Ui.Container>
   );
 }
+
+Choice.propTypes = {
+  background: PropTypes.bool,
+  color: PropTypes.string,
+  value: PropTypes.string,
+  handleChange: PropTypes.func,
+  label: PropTypes.string,
+};
+
+Choice.defaultProps = {
+  background: false,
+  color: '',
+  value: '',
+  handleChange: () => {},
+  label: '',
+};

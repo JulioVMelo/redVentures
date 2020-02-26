@@ -1,9 +1,8 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useCallback } from 'react';
 import { useParams, useHistory } from 'react-router-dom';
 import * as Ui from './styles';
 import Pick from '../../assets/images/pick.png';
 import Border from '../../components/Border';
-// import Product from '../../components/Product';
 import api from '../../services/api';
 import Product from '../../components/Product';
 
@@ -21,9 +20,12 @@ export default function Store() {
     handleFetchPlants();
   }, [pets, sun, water]);
 
-  function handlePlantDetail(id) {
-    history.push(`/purchase/${id}`);
-  }
+  const handlePlantDetail = useCallback(
+    id => {
+      history.push(`/purchase/${id}`);
+    },
+    [history]
+  );
 
   return (
     <Ui.Container>

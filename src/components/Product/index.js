@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import * as Ui from './styles';
 import HighSun from '../../assets/images/icons/highSun.png';
 import FalseIcon from '../../assets/images/icons/false.png';
@@ -48,3 +49,25 @@ export default function Product({
     </Ui.Container>
   );
 }
+
+Product.propTypes = {
+  image: PropTypes.string,
+  name: PropTypes.string,
+  price: PropTypes.string,
+  id: PropTypes.string,
+  handleDetail: PropTypes.func,
+  properties: PropTypes.shape({
+    toxicity: PropTypes.string,
+    sunPlant: PropTypes.string,
+    waterPlant: PropTypes.string,
+  }),
+};
+
+Product.defaultProps = {
+  image: '',
+  name: '',
+  price: '',
+  id: '',
+  handleDetail: () => {},
+  properties: {},
+};
