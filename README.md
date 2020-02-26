@@ -1,68 +1,80 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![Banana](https://photos.prnewswire.com/prnfull/20151020/278614LOGO)
 
-## Available Scripts
+## Libs (Produção e Desenvolvimento)
 
-In the project directory, you can run:
+---
 
-### `yarn start`
+1. React.JS
+1. React Router Dom
+1. Styled Components
+1. EsLint
+1. Prettier
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Considerações
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+---
 
-### `yarn test`
+1. A abordagem utilizada para passagem de parametros foi feita através das rotas, já que não se tratavam de dados sensiveis para o usuário final. Apesar de gostar do Redux, a aplicação era muito simples para utilização do mesmo (projetos desenvolvidos com redux no final do Readme).
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+1. Escolhi passar o svg como Children para facilitar a modificação do mesmo, no hover, e quando o item é selecionado. Em um cenário ideal, sugeriria duas opções:
+   2.1 Design desenvolvido em cima de uma biblioteca de icones já existente;
+   2.2 Transformar todos os ícones em fontes, diminuindo assim a quantidade de código e mantendo a facilidade de customização do componente;
 
-### `yarn build`
+1. A forma como foi dividido os componentes não estão causando renderizações desnecessárias, praticamente não tive necessidade de memorizar os componentes;
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. Com um pouco mais de tempo, dividiria mais a aplicação em componentes menores, acabei repetindo muito código em containers de estilo, também alteraria a implementação da Borda lateral com a logo, fiz da primeira forma que imaginei, mas claramente não é a melhor, adicionaria loadings enquanto as requisições estão sendo processadas.
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+## Iniciando
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+---
 
-### `yarn eject`
+Baixe as dependências utilizando o comando a seguir
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+```shell
+  yarn
+```
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Inicie a aplicação utilizando o comando a seguir
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+```shell
+  yarn start
+```
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## Deploy
 
-## Learn More
+---
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Não realizei o deploy, pois tive problemas com as rotas no netlify, é necessário fazer algumas configurações, para que o roteamento fique por conta da aplicação e não do servidor;
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Sugestão
 
-### Code Splitting
+---
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+A não ser que faça parte do teste, algumas informações sobre a validação do formulário no servidor não foram informadas, no campo de nome e sobrenome a regra que deveria conter ao menos 2 letras um espaço em branco e ao menos mais duas letras, poderia ser informada, evitando possíveis erros de implementação e pouparia tempo de investigação.
 
-### Analyzing the Bundle Size
+## Outros Projetos
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+---
 
-### Making a Progressive Web App
+Um lista de projetos desenvolvidos apenas por estudo ou diversão.
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+1.[Task App](https://task-minimal.netlify.com/) : controle de atividades do dia;
 
-### Advanced Configuration
+2. [Best Sellers NYT](https://bestsellers.netlify.com/): Consumo da api do New York Times;
+3. [VUTTR](https://github.com/JulioVMelo/vuttr) : Projeto para salvar libs que gostei e pretendo usar em algum momento (Desenvolvido com redux e sagas);
+4. [Loja Mobile](https://github.com/JulioVMelo/RocketShoesMobile) : App desenvolvido com react native, redux e sagas;
+5. [Clone do gmail](https://github.com/JulioVMelo/clone-gmail): apenas uma brincadeira, na época estava estudando flexbox;
+6. [Clone do Twitter](https://github.com/JulioVMelo/clone-gmail): apenas diversão.
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+## Empresa
 
-### Deployment
+---
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
+Projetos desenvolvidos em produção
 
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+1. [PWA Institucional](https://www.alfagroup.tech/): utilizando Gatsby + GraphQL
+1. [PWA institucional 2](https://www.alfainteligencia.com.br/): utilizando Gatsby + GraphQL
+1. [Style guide de desenvolvimento CSS](http://styleguide.sogo.com.br/docs/css/): Como tech lead criei um projeto utilizando o Docusaurus para ajudar os novos funcionários a seguirem os padrões de desenvolvimento com CSS.
+1. Mais 80 órgãos governamentais utilizando um thema wordpress que criei seguindo as regras do Tribunal de contas.
+1. Nesse momento possuo 2 dashboards em desenvolvimento, infográficos utilizando a biblioteca Recharts (d3).
+1. [Design de app](https://prototipotensai.netlify.com/): (NÃO SOU DESIGN, não tenho essa competência) Feito por conta de uma necessidade da empresa.
